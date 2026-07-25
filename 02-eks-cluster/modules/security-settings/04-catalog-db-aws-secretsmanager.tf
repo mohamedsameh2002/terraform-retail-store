@@ -12,5 +12,8 @@ resource "aws_secretsmanager_secret_version" "catalog_db_secret" {
   secret_string = jsonencode({
     MYSQL_USER     = "mydbadmin"
     MYSQL_PASSWORD = "kalyandb101"
+    
+    POSTGRESQL_USER     = "mydbadmin"
+    POSTGRESQL_PASSWORD = "kalyandb101"
   })
 }

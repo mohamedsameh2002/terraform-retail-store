@@ -50,9 +50,9 @@ resource "aws_iam_role_policy_attachment" "catalog_db_secret_policy_attachment" 
 
 
 
-resource "aws_eks_pod_identity_association" "catalog_db" {
+resource "aws_eks_pod_identity_association" "catalog_db_role_association" {
   cluster_name    = var.cluster_name
   namespace       = "default"
-  service_account = "catalog-mysql-sa"
+  service_account = "catalog-mysql"
   role_arn        = aws_iam_role.catalog_db_secrets_role.arn
 }
