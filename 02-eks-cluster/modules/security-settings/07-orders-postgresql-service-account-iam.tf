@@ -63,7 +63,7 @@ resource "aws_iam_policy" "orders_sqs_policy" {
           "sqs:ListQueues",
           "sqs:PurgeQueue"
         ]
-        Resource = aws_sqs_queue.orders_sqs_queue.arn
+        Resource = "arn:aws:sqs:${var.aws_region}:${var.account_id}:orders-queue"
       }
     ]
   })
